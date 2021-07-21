@@ -4,7 +4,7 @@ on: push
 
 jobs:
   push-vars:
-      runs-on:ubuntu-latest
+      runs-on: ubuntu-latest
       steps:
         - name: Dump GitHub context
           env:
