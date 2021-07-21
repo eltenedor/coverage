@@ -28,7 +28,7 @@ jobs:
     container: eltenedor/coverage-perl
     steps:
       - uses: actions/checkout@v2
-      - name: run a simple unit test
+      - name: Build project, run tests and coverage analysis
         run: |
           perl -Ilib Build.PL 
           ./Build test
