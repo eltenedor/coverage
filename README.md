@@ -1,6 +1,6 @@
-# coverage
+# Code Coverage Example Directory
 
-Also check out the info on HedgeDoc: https://demo.hedgedoc.org/De7UVq0aSUmHEswaf0i-vw?both
+Please check out the info on HedgeDoc: https://demo.hedgedoc.org/De7UVq0aSUmHEswaf0i-vw?both
 
 Build the docker file
 ```bash
@@ -17,12 +17,18 @@ If you also want a coverage analysis you first need to build the project as desc
 ```
 perl -Ilib Build.PL
 ./Build test
-./Build testcover
+cover -test
 ```
 
 output of the coverage analysis will reside in `./cover_db/coverage.html` and look similar to this one:
 
 ![image](https://user-images.githubusercontent.com/3385756/126485732-2ccafde9-0b14-47d9-9ad0-7566b5c62dc8.png)
+
+If you have a codecov token in your environment, you can run
+```
+cover -report codecov
+```    
+and the results will be pushed to codecov. The badge will be updated accordingly, see below.
 
 # Badges
 
