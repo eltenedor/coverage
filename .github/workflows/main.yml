@@ -42,7 +42,6 @@ jobs:
         with:
           name: coverage-report
           path: cover_db/
-      - uses: actions/checkout@master
       - uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
