@@ -59,6 +59,8 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
+          echo $CODECOV_TOKEN
+          export CODECOV_TOKEN
           perl -Ilib Build.PL 
           ./Build build
           cover -test -report codecov
