@@ -40,9 +40,6 @@ jobs:
         with:
           name: coverage-report
           path: cover_db/
-
-  codecov:
-    steps:
       - uses: actions/checkout@master
       - uses: codecov/codecov-action@v2
         with:
