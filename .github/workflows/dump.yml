@@ -28,5 +28,5 @@ jobs:
           run: echo "$STRATEGY_CONTEXT"
         - name: Dump matrix context
           env:
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
+            MATRIX_CONTEXT: ${{ toJson(matrix) }}
           run: echo "$MATRIX_CONTEXT"
