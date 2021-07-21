@@ -62,3 +62,17 @@ jobs:
           ./Build build
           cover -test
           cover -report codecov
+
+  env:
+    runs-on: ubuntu-latest
+    container: eltenedor/coverage-perl:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build project, run tests and coverage analysis
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: |
+          perl -Ilib Build.PL 
+          ./Build build
+          cover -test
+          cover -report codecov
