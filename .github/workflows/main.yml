@@ -34,7 +34,6 @@ jobs:
           ./Build build
           cover -test
           ./Build testcover
-#         cover -test -report codecov
 #       env:
 #         CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
  
@@ -51,3 +50,15 @@ jobs:
           fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)
 
+  cover-codecov:
+    runs-on: ubuntu-latest
+    container: eltenedor/coverage-perl:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build project, run tests and coverage analysis
+        run: |
+          perl -Ilib Build.PL 
+          ./Build build
+          cover -report -test codecov
+        env:
+          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
