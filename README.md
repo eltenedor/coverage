@@ -34,3 +34,5 @@ and the results will be pushed to codecov. The badge will be updated accordingly
 
 ![main workflow](https://github.com/eltenedor/coverage/actions/workflows/main.yml/badge.svg)
 [![codecov](https://codecov.io/gh/eltenedor/coverage/branch/main/graph/badge.svg?token=Y37BJJW9R8)](https://codecov.io/gh/eltenedor/coverage)
+![GitHub last commit](https://img.shields.io/github/last-commit/eltenedor/coverage)
+
