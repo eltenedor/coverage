@@ -25,14 +25,14 @@ jobs:
           prove -Ilib -v t/*.t
   build-project:
     runs-on: ubuntu-latest
-    container: eltenedor/coverage-perl
+    container: eltenedor/coverage-perl:latest
     steps:
       - uses: actions/checkout@v2
       - name: Build project, run tests and coverage analysis
         run: |
           perl -Ilib Build.PL 
-          ./Build test
-          ./Build testcover
+          ./Build build
+          cover -test
           cover -report codecov
  
       - uses: actions/upload-artifact@v2
