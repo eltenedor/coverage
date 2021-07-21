@@ -34,3 +34,7 @@ jobs:
           ./Build test
           ./Build testcover
  
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: ./cover_db/coverage.html
