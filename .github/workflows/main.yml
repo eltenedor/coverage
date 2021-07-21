@@ -15,7 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  test:
+  run-test:
     runs-on: ubuntu-latest
     container: perl:latest
     steps:
@@ -23,3 +23,14 @@ jobs:
       - name: run a simple unit test
         run: |
           prove -Ilib -v t/*.t
+  build-project:
+    runs-on: ubuntu-latest
+    container: eltenedor/coverage-perl
+    steps:
+      - uses: actions/checkout@v2
+      - name: run a simple unit test
+        run: |
+          perl -Ilib Build.PL 
+          ./Build test
+          ./Build testcover
+ 
