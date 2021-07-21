@@ -57,7 +57,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build project, run tests and coverage analysis
         env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
           perl -Ilib Build.PL 
           ./Build build
