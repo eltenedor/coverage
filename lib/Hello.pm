@@ -4,6 +4,7 @@ package Hello;
 use strict;
 use warnings;
 
+$Hello::VERSION = '0.1';
 
 sub my_sub{
   return 1;
