@@ -27,5 +27,4 @@ output of the coverage analysis will reside in `./cover_db/coverage.html` and lo
 # Badges
 
 ![main workflow](https://github.com/eltenedor/coverage/actions/workflows/main.yml/badge.svg)
-
 [![codecov](https://codecov.io/gh/eltenedor/coverage/branch/main/graph/badge.svg?token=Y37BJJW9R8)](https://codecov.io/gh/eltenedor/coverage)
