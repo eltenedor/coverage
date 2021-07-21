@@ -33,10 +33,7 @@ jobs:
           perl -Ilib Build.PL 
           ./Build test
           ./Build testcover
-      - name: Upload coverage to Codecov
-          uses: codecov/codecov-action@v1
-          with:
-            token: ${{ secrets.CODECOV_TOKEN }}
+          cover -report codecov
  
       - uses: actions/upload-artifact@v2
         with:
