@@ -32,8 +32,7 @@ jobs:
         run: |
           perl -Ilib Build.PL 
           ./Build build
-          cover -test
-          cover -report codecov
+          cover -test -report codecov
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
  
