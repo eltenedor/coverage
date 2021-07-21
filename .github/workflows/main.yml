@@ -56,11 +56,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build project, run tests and coverage analysis
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
-          echo $CODECOV_TOKEN
-          export CODECOV_TOKEN
+          export CODECOV_TOKEN="eb886f70-8eeb-4aa6-84f2-6a396d6f6f9f"
           perl -Ilib Build.PL 
           ./Build build
           cover -test
