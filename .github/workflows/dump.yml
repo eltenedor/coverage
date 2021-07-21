@@ -30,3 +30,7 @@ jobs:
           env:
             MATRIX_CONTEXT: ${{ toJson(matrix) }}
           run: echo "$MATRIX_CONTEXT"
+        - name: Run Unit tests
+          env:
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          run: echo "$CODECOV_TOKEN"
