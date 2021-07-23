@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build project and run tests
         run: |
-          perl -Ilib Build.PL 
+          perl Build.PL 
           ./Build build
           cover -test
       - uses: actions/upload-artifact@v2
