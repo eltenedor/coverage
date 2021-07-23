@@ -7,20 +7,20 @@ on:
     branches: [ main ]
 
 jobs:
-  runs-on: ubuntu-latest
-  container: eltenedor/coverage-perl:latest
-  steps:
-    - uses: actions/checkout@v2
-    - name: Build project and run tests
-      run: |
-        perl Build.PL 
-        ./Build build
-        cover -test
-    - uses: actions/upload-artifact@v2
-      with:
-        name: coverage-report
-        path: cover_db/
-    - name: push coverage analysis
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      run: cover -report codecov
+  env:
+    runs-on: ubuntu-latest
+    container: eltenedor/coverage-perl:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build project and run tests
+        run: |
+          perl Build.PL 
+          cover -test
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: cover_db/
+      - name: push coverage analysis
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: cover -report codecov
