@@ -50,7 +50,7 @@ The workflow is specified by the file `.github/workflows/main.yml` which can be 
 
 ### Header
 
-Here we specify a name for the workflow and `on` which ocasions it should respond to a trigger event: 
+Here, we specify a name for the workflow and `on` which ocasions it should respond to a trigger event: 
 
 ```yaml
 name: Unit Tests
@@ -62,11 +62,11 @@ on:
     branches: [ main ]
 ```
 
-In this case the action runs only on the `main` branch when someone pushes to it or makes a pull_request.
+In this case, the action runs only on the `main` branch when someone pushes to it or makes a pull_request.
 
 ### Job
 
-After the the first specified job uses the Docker image `eltenedor/coverage-perl:latest`
+Specify the Docker image `eltenedor/coverage-perl:latest`
 
 ```yaml
   coverage:
@@ -75,7 +75,7 @@ After the the first specified job uses the Docker image `eltenedor/coverage-perl
     steps:
 ```
 
-and then runs the different steps:
+Runs the different steps:
 
 #### Build the project and run the test
 ```yaml
@@ -97,7 +97,7 @@ and then runs the different steps:
 
 #### Push the coverage report to codecov
 
-This step uses products from the previous steps, namely the `cover_db` folder. The Token stems from the the codecov app that has been linked to the repository and saved to the repository secrets.
+This step uses products from the previous steps, namely the `cover_db` folder. The token stems from the the codecov app that has been linked to the repository and saved to the repository secrets.
 
 ```yaml
       - name: push coverage analysis
@@ -108,9 +108,9 @@ This step uses products from the previous steps, namely the `cover_db` folder. T
 
 ## Inspecting the Action
 
-* Got tho the `actions` tab on the repository main page. 
-* Choose one of the workflow runs
-* explore the output of the job `coverage` or donwload the artifacts
+* Got to the `actions` tab on the repository main page. 
+* Choose one of the workflow runs.
+* Explore the output of the job `coverage` or donwload the artifacts.
 
 ## Setting the automatization
 
