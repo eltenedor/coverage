@@ -46,7 +46,7 @@ This GitHub repository is using GitHub actions in order to mimic the above proce
 
 ## Prerequesites
 
-You can either start from a fork or copy the necessary files. Either way, you will not have access to the secret `CODECOV_TOKEN` used by your repository. Instead, head over to  [codecov.io](https://about.codecov.io/) and login via GitHub, connect the repo and look for the `Repository Upload Token` in the `Settings` section. Save this token to your repositorys `Secrets` on GitHub.
+You can either start from a fork or copy the necessary files in order to have a basic structure for the tests to run. Now, head over to [codecov.io](https://about.codecov.io/) and login via GitHub, connect the repo and look for the `Repository Upload Token` in the `Settings` section. Save this token to your repositorys `Secrets` on GitHub.
 
 In case of the repository `coverage` in the namespace `eltenedor` the token is to be found at 
 
@@ -54,19 +54,19 @@ In case of the repository `coverage` in the namespace `eltenedor` the token is t
 
 ![image](https://user-images.githubusercontent.com/3385756/130256016-c9587ce0-e48a-4e92-aa2e-0e1a89b29e01.png)
 
-**Copy** the token and head over to your repository `Secrets`, in the case of this repository visit
+**Copy** the token and head over to your repository `Secrets`, in the case of this repository one would visit
 
 [`https://github.com/eltenedor/coverage/settings/secrets/actions`](https://github.com/eltenedor/coverage/settings/secrets/actions)
 
-and **add** a secret
+and add a**New Repository** secret
 
 ![image](https://user-images.githubusercontent.com/3385756/130256785-6a7f9f4b-577f-4e95-a5eb-8536ef1c5b2c.png)
 
-Name the secret `CODECOV_TOKEN` and copy+paste the token from codecov
+Name the secret `CODECOV_TOKEN` and copy+paste the token from codecov.io
 
 ![image](https://user-images.githubusercontent.com/3385756/130256928-62301c6d-686c-4692-b94f-b3a57d1b98de.png)
 
-Finish by click **Add secret**. Your newly added secret should now show up on the secrets page of your repo:
+Finish by clicking on **Add secret**. Your newly added secret should now show up on the secrets page of your repo:
 
 ![image](https://user-images.githubusercontent.com/3385756/130257083-e64a1017-0e7f-4444-819c-99874f2b39f5.png)
 
@@ -130,13 +130,16 @@ This step uses products from the previous steps, namely the `cover_db` folder. T
 * Choose one of the workflow runs.
 * Explore the output of the job `coverage` or donwload the artifacts.
 
-
-
 # Badges
 
 The badges are (dynamic) `.svg`-files that can be put on any webpage and that may change their look depending on further parameters. For example, this is the badge to output whether the tests went through without any problems. 
 
 `![main workflow](https://github.com/eltenedor/coverage/actions/workflows/main.yml/badge.svg)`
+
+For the coverage badge, head over to your codecov page and retrieve it from there:
+
+![image](https://user-images.githubusercontent.com/3385756/130257745-ad33d0c5-7a9a-462e-8707-12bfc3d21651.png)
+
 
 # Further Links and References
 
