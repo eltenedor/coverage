@@ -44,6 +44,33 @@ This GitHub repository is using GitHub actions in order to mimic the above proce
     * to make the report accessible without downloading the *arfifact*
     * generate a Badge for the repository, with the overall coverage. 
 
+## Prerequesites
+
+You can either start from a fork or copy the necessary files. Either way, you will not have access to the secret `CODECOV_TOKEN` used by your repository. Instead, head over to  [codecov.io](https://about.codecov.io/) and login via GitHub, connect the repo and look for the `Repository Upload Token` in the `Settings` section. Save this token to your repositorys `Secrets` on GitHub.
+
+In case of the repository `coverage` in the namespace `eltenedor` the token is to be found at 
+
+[`https://app.codecov.io/gh/eltenedor/coverage/settings`](https://app.codecov.io/gh/eltenedor/coverage/settings)
+
+![image](https://user-images.githubusercontent.com/3385756/130256016-c9587ce0-e48a-4e92-aa2e-0e1a89b29e01.png)
+
+**Copy** the token and head over to your repository `Secrets`, in the case of this repository visit
+
+[`https://github.com/eltenedor/coverage/settings/secrets/actions`](https://github.com/eltenedor/coverage/settings/secrets/actions)
+
+and **add** a secret
+
+![image](https://user-images.githubusercontent.com/3385756/130256785-6a7f9f4b-577f-4e95-a5eb-8536ef1c5b2c.png)
+
+Name the secret `CODECOV_TOKEN` and copy+paste the token from codecov
+
+![image](https://user-images.githubusercontent.com/3385756/130256928-62301c6d-686c-4692-b94f-b3a57d1b98de.png)
+
+Finish by click **Add secret**. Your newly added secret should now show up on the secrets page of your repo:
+
+![image](https://user-images.githubusercontent.com/3385756/130257083-e64a1017-0e7f-4444-819c-99874f2b39f5.png)
+
+
 ## Defining the GitHub Action
 
 The workflow is specified by the file `.github/workflows/main.yml` which can be defided into multiple sections.
@@ -77,22 +104,13 @@ Specify the Docker image `eltenedor/coverage-perl:latest`
 
 Runs the different steps:
 
-#### Build the project and run the test
+#### Build the project, run the test
 ```yaml
       - uses: actions/checkout@v2
       - name: Build project and run tests
         run: |
           perl Build.PL 
           cover -test
-```
-
-#### Upload the artifact
-
-```yaml
-      - uses: actions/upload-artifact@v2
-        with:
-          name: coverage-report
-          path: cover_db/
 ```
 
 #### Push the coverage report to codecov
@@ -112,9 +130,7 @@ This step uses products from the previous steps, namely the `cover_db` folder. T
 * Choose one of the workflow runs.
 * Explore the output of the job `coverage` or donwload the artifacts.
 
-## Setting the automatization
 
-You can either start from a fork or copy the necessary files. Either way, you will not have access to the secret `CODECOV_TOKEN` used by this repository. Instead, head over to  [codecov.io](https://about.codecov.io/) and login via GitHub, connect the repo and look for the `Repository Upload Token` in the `Settings` section. Save this token to your repositorys `Secrets` on GitHub.
 
 # Badges
 
