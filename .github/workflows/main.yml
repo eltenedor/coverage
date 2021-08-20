@@ -16,5 +16,6 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
-          prove t
+          perl Build.PL 
+          cover -test
           cover -report codecov
