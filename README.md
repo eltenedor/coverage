@@ -58,7 +58,7 @@ In case of the repository `coverage` in the namespace `eltenedor` the token is t
 
 [`https://github.com/eltenedor/coverage/settings/secrets/actions`](https://github.com/eltenedor/coverage/settings/secrets/actions)
 
-and add a**New Repository** secret
+and add a **New Repository** secret
 
 ![image](https://user-images.githubusercontent.com/3385756/130256785-6a7f9f4b-577f-4e95-a5eb-8536ef1c5b2c.png)
 
